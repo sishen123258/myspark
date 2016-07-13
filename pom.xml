@@ -50,6 +50,13 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2_2.11</artifactId>
             <version>2.4.6</version>
@@ -71,10 +78,11 @@
                             <goal>compile</goal>
                         </goals>
                         <configuration>
-                            <sources>
+                            <!--<sources>-->
+
                                 <source>${basedir}/src/main/java</source>
                                 <source>${basedir}/src/main/scala</source>
-                            </sources>
+                            <!--</sources>-->
                         </configuration>
 
                     </execution>
