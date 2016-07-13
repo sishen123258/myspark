@@ -14,7 +14,9 @@ object First{
 
     val sc=new SparkContext(conf)
 
-    val hadoopFile = sc.hadoopFile("/user/t_test/ATTRIBUTION/20160624/")
+    val hadoopFile = sc.hadoopFile("/user/t_test/ATTRIBUTION/20160624/")  //TODO add inputformat
+
+
 
 
 
