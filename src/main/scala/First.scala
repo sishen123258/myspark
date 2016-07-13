@@ -1,3 +1,4 @@
+import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -14,7 +15,7 @@ object First{
 
     val sc=new SparkContext(conf)
 
-    val hadoopFile = sc.hadoopFile("/user/t_test/ATTRIBUTION/20160624/")  //TODO add inputformat
+    val hadoopFile = sc.hadoopFile("/user/t_test/ATTRIBUTION/20160624/", SequenceFileInputFormat[_, _])  //TODO add inputformat
 
 
 
