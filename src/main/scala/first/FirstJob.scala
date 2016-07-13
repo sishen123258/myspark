@@ -1,5 +1,6 @@
+package first
+
 import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat
-import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
@@ -7,7 +8,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   *
   * /user/t_test/ATTRIBUTION
   */
-object First{
+object FirstJob{
 
   def main(args: Array[String]) {
 
