@@ -1,14 +1,12 @@
 package first
 
-import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat
+import first.bean.{ActionRecordKey, ActionRecordValue}
+import org.apache.log4j.Logger
 import org.apache.spark.{SparkConf, SparkContext}
 
-/**
-  * Created by Tong on 2016/7/13.
-  *
-  * /user/t_test/ATTRIBUTION
-  */
 object FirstJob{
+
+  private[this] val logger = Logger.getLogger(getClass().getName());
 
   def main(args: Array[String]) {
 
@@ -16,11 +14,14 @@ object FirstJob{
 
     val sc=new SparkContext(conf)
 
-    val hadoopFile = sc.hadoopFile("/user/t_test/ATTRIBUTION/20160624/", SequenceFileInputFormat[_, _])  //TODO add inputformat
+    //val hadoopFile = sc.hadoopFile("/user/t_test/ATTRIBUTION/20160624/")
 
+    //classOf == .class
+    val sequenceFile=sc.sequenceFile("/user/t_test/ATTRIBUTION/20160624/",classOf[ActionRecordKey],classOf[ActionRecordValue])
 
+    val first = sequenceFile.take(1)
 
-
+    logger.info(first)
 
   }
 

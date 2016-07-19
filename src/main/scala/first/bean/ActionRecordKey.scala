@@ -5,10 +5,7 @@ import java.io.{DataInput, DataOutput}
 import org.apache.commons.lang.builder.CompareToBuilder
 import org.apache.hadoop.io.{Text, WritableComparable}
 
-/**
-  * Created by Tong on 2016/7/14.
-  */
-class ActionRecordKey extends WritableComparable[ActionRecordKey]{
+class ActionRecordKey extends WritableComparable[JavaActionRecordKey]{
 
   //private[conversion]
   val actionId: Text = new Text
@@ -39,7 +36,7 @@ class ActionRecordKey extends WritableComparable[ActionRecordKey]{
     this.hour.set(hour)
   }
 
-  override def compareTo(o: ActionRecordKey): Int = {
+  override def compareTo(o: JavaActionRecordKey): Int = {
     var flag: Int = -1
     if (o != null) {
       val builder: CompareToBuilder = new CompareToBuilder
